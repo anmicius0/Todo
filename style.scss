@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+body, html {
+    height: calc(100% - 2em);
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#84fab0+0,8fd3f4+100 */
+    background: #84fab0; /* Old browsers */
+    background: -moz-linear-gradient(-45deg,  #84fab0 0%, #8fd3f4 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg,  #84fab0 0%,#8fd3f4 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg,  #84fab0 0%,#8fd3f4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#84fab0', endColorstr='#8fd3f4',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+aside {
+    color: #fff;
+    display: grid;
+    grid-template-columns: auto 40px;
+    padding: 2em;
+}
+
+img {
+    width: 40px;
+    cursor: pointer;
+}
+
+figure {
+    margin: 0%;
+}
+
+figcaption {
+    font-size: 1.3em;
+    font-weight: 700;
+}
+
+nav {
+    background: #fff;
+}
+
+.active {
+    position: absolute;
+    display: block;
+    background: #fff;
+    height: 100%;
+    width:50%;
+    left: 0;
+    top: 0;
+}
+
+ul{
+    display: none;
+    list-style-type: none;
+    padding: 0%;
+    margin: 0%;
+
+    li a {
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 0.9em;
+        display: block;
+        padding: 1.5em 3em;
+        background-color: rgba(255, 255, 255, .35);
+        color: #000;
+    }
+}
+
+main {
+    background: #fff;
+    padding: 1em 1.4em;
+}
+
+h1 {
+    margin: 0%
+}
+
+@media only screen and (min-width:768px) {
+    body {
+        display:grid;
+        grid-template-columns: 20% auto;
+        padding: 2em;
+    }
+
+    img {
+        display: none;
+    }
+
+    aside {
+        background: #DCE1F6;
+        grid-template-rows: 20% auto;
+        grid-template-columns: auto;
+        padding: 0%;
+    }
+
+    main {
+        padding-top: 4em;
+        background: #fff;
+    }
+
+    #avatar {
+        border-radius: 50%;
+        background: #fff;
+        width: 50px;
+        height: 50px;
+        margin: 2em auto 1em auto;
+    }
+
+    figcaption {
+        text-align: center;
+        color: #000;
+    }
+
+    ul {
+        display: block;
+        margin-top: 2em;
+        position: relative;
+        background: none;
+        width: 100%;
+
+        li a:hover {
+            background: #fff;
+        }
+    }
+
+    nav {
+        background: none;   
+    }
+}

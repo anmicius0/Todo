@@ -2,18 +2,38 @@
 <html>
   <head>
     <title>TODO App</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
   </head>
   <body>
-    <div class="container center">
-      <h1 class="center title">My TODO App</h1>
-      <div class="flow-right controls">
+    <aside>
+      <figure>
+        <div id='avatar'></div>
+        <figcaption>User Name</figcaption>
+      </figure>
+      <img src="./images/menu.svg">
+      <nav>
+        <ul>
+          <li><a href="#">Todo</a></li>
+          <li><a href="#">Finished</a></li>
+          <li><a href="#">Trash Bin</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main>
+      <div>
+        <h1 id="title">Todo</h1>
         <span>Item count: <span id="item-count">0</span></span>
-        <span>Unchecked count: <span id="unchecked-count">0</span></span>
       </div>
-      <button class="button center" onClick="newTodo()">New TODO</button>
-      <ul id="todo-list" class="todo-list"></ul>
-    </div>
+      
+      <div id="todo-list">
+
+      </div>
+
+      <button onClick="newTodo()">Add Todo</button>
+    </main>
+
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8.13.0/dist/sweetalert2.all.min.js"></script>
     <script src="./script.js"></script>
   </body>

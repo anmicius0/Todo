@@ -21,6 +21,15 @@ document.addEventListener('DOMContentLoaded', ()=>{
       set_todo(todos[i])
     }
   }
+
+  // when menu button is clicked
+  var menu = document.querySelector('ul')
+      menulink = document.querySelector('img')
+
+  menulink.addEventListener('click', (e) => {
+    menu.classList.toggle('active');
+    e.preventDefault()
+  })
 })
 
 
@@ -43,14 +52,16 @@ async function newTodo() {
 
 
 function set_todo(message) {
-  const li = document.createElement('li');
+  const li = document.createElement('div');
+  li.className += 'todo-item'
+  li.setAttribute('id', `${todo_array.length}`)
   li.innerHTML = 
-  `<p id='${todo_array.length}'> ${message} </p>
+  `<p id='${todo_array.length}-text'> ${message} </p>
 
     <div>
       <button onclick="delete_todo(${todo_array.length})"> complete </button>
       <button onclick="delete_todo(${todo_array.length})" > delete </button>
-    </div>`;
+    </div>`;  
 
   list.append(li)
 
@@ -60,8 +71,8 @@ function set_todo(message) {
 
 
 function delete_todo(id) {
-  const p = document.getElementById(id)
-  const li = document.getElementById(id).parentElement
+  const p = document.getElementById(`${id}-text`)
+  const li = document.getElementById(id)
 
   // delete from localStorage
   const index = todo_array.indexOf(p.innerText)

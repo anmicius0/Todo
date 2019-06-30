@@ -7,32 +7,35 @@ const classNames = {
 
 const list = document.getElementById('todo-list')
 const itemCountSpan = document.getElementById('item-count')
-const uncheckedCountSpan = document.getElementById('unchecked-count')
-var todo_array = [];
+const menu = document.getElementById('menu')
+const menulink = document.getElementById('menulink')
 
+var todo_array = []
 
 document.addEventListener('DOMContentLoaded', ()=>{
   
-  // if there are todos in localStorage
-  var todos = JSON.parse(localStorage.getItem('todo'))
+  // clear list
+  list.innerHTML = ''
 
-  if(todos != null) {
-    for(var i=0; i<todos.length; i++) {
-      set_todo(todos[i])
-    }
+  // get localStorage
+  var items = JSON.parse(localStorage.getItem('todo'))
+  if(items != null) {
+    items.forEach(element => {
+      set_todo(element)
+      todo_array.push(element)
+      update()
+    })
   }
-
+  
   // when menu button is clicked
-  var menu = document.querySelector('ul')
-      menulink = document.querySelector('img')
-
   menulink.addEventListener('click', (e) => {
     menu.classList.toggle('active');
     e.preventDefault()
   })
+
 })
 
-
+// when user click 'add Todo' button
 async function newTodo() {
 
   // show an alert to enter todo
@@ -47,10 +50,23 @@ async function newTodo() {
   }
   
   // store the list to localstorage
-  localStorage.setItem('todo', JSON.stringify(todo_array))
+  update()
 }
 
+function complete(id) {
+  const p = document.getElementById(`${id}-text`)
+  const li = document.getElementById(`${id}`)
 
+  // delete from list
+  var index = todo_array.indexOf(p.innerText)
+  todo_array.splice(index, 1)
+  update()
+
+  // delete from html
+  li.remove()
+}
+
+// add message to todo list
 function set_todo(message) {
   const li = document.createElement('div');
   li.className += 'todo-item'
@@ -59,33 +75,18 @@ function set_todo(message) {
   `<p id='${todo_array.length}-text'> ${message} </p>
 
     <div>
-      <button onclick="delete_todo(${todo_array.length})"> complete </button>
-      <button onclick="delete_todo(${todo_array.length})" > delete </button>
+      <button onclick="complete(${todo_array.length})"> complete </button>
     </div>`;  
 
   list.append(li)
-
-  // update counter
-  update_counter()
 }
 
 
-function delete_todo(id) {
-  const p = document.getElementById(`${id}-text`)
-  const li = document.getElementById(id)
-
-  // delete from localStorage
-  const index = todo_array.indexOf(p.innerText)
-  todo_array.splice(index, 1)
-  
-  // delete from html
-  li.remove()
-
-  // update counter
-  update_counter()
-}
-
-function update_counter() {
+function update() {
+  localStorage.setItem('todo', JSON.stringify(todo_array))
   itemCountSpan.innerHTML = list.childElementCount
-  uncheckedCountSpan.innerHTML = list.childElementCount
+}
+
+function capitalize(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
 }

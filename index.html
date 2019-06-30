@@ -10,12 +10,10 @@
         <div id='avatar'></div>
         <figcaption>User Name</figcaption>
       </figure>
-      <img src="./images/menu.svg">
+      <img id="menulink" src="./images/menu.svg">
       <nav>
-        <ul>
-          <li><a href="#">Todo</a></li>
-          <li><a href="#">Finished</a></li>
-          <li><a href="#">Trash Bin</a></li>
+        <ul id="menu">
+          <li><a href='#'>Todo</a></li>
         </ul>
       </nav>
     </aside>
@@ -26,11 +24,10 @@
         <span>Item count: <span id="item-count">0</span></span>
       </div>
       
-      <div id="todo-list">
-
+      <div id="todo-list" onchange="update()">
       </div>
 
-      <button onClick="newTodo()">Add Todo</button>
+      <button onclick="newTodo()">Add Todo</button>
     </main>
 
 

@@ -60,10 +60,10 @@ function complete(id) {
   // delete from list
   var index = todo_array.indexOf(p.innerText)
   todo_array.splice(index, 1)
-  update()
-
+  
   // delete from html
   li.remove()
+  update()
 }
 
 // add message to todo list
@@ -74,9 +74,11 @@ function set_todo(message) {
   li.innerHTML = 
   `<p id='${todo_array.length}-text'> ${message} </p>
 
-    <div>
-      <button onclick="complete(${todo_array.length})"> complete </button>
-    </div>`;  
+  <div class="" style="text-align: center; margin-top: 8px;">
+    <button class="icon-btn add-btn" onclick="complete(${todo_array.length})">  
+      <div class="btn-txt"> complete </div>
+    </button> 
+  </div>`;  
 
   list.append(li)
 }

@@ -19,15 +19,20 @@
     </aside>
 
     <main>
-      <div>
+      <div id="title-bar">
         <h1 id="title">Todo</h1>
-        <span>Item count: <span id="item-count">0</span></span>
+        <span id="counter">Item count: <span id="item-count">0</span></span>
       </div>
       
       <div id="todo-list" onchange="update()">
       </div>
 
-      <button onclick="newTodo()">Add Todo</button>
+      <div onclick="newTodo()" style="text-align: center; margin-top:5%">
+        <button class="icon-btn add-btn">
+          <div class="add-icon"></div>
+          <div class="btn-txt">Add</div>
+        </button>
+      </div>
     </main>
 
 

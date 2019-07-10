@@ -7,13 +7,13 @@
   <body>
     <aside>
       <figure>
-        <div id='avatar'></div>
+        <div id="avatar"></div>
         <figcaption>User Name</figcaption>
       </figure>
-      <img id="menulink" src="./images/menu.svg">
+      <img id="menulink" src="./images/menu.svg" />
       <nav>
         <ul id="menu">
-          <li><a href='#'>Todo</a></li>
+          <li><a href="#">Todo</a></li>
         </ul>
       </nav>
     </aside>
@@ -23,9 +23,8 @@
         <h1 id="title">Todo</h1>
         <span id="counter">Item count: <span id="item-count">0</span></span>
       </div>
-      
-      <div id="todo-list" onchange="update()">
-      </div>
+
+      <div id="todo-list" onchange="update()"></div>
 
       <div onclick="newTodo()" style="text-align: center; margin-top:5%">
         <button class="icon-btn add-btn">
@@ -34,7 +33,6 @@
         </button>
       </div>
     </main>
-
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8.13.0/dist/sweetalert2.all.min.js"></script>
     <script src="./script.js"></script>

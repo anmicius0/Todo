@@ -1,8 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
-body, html {
+body,
+html {
   height: calc(100% - 2em);
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 body {
@@ -211,7 +212,7 @@ main {
     display: none;
   }
   aside {
-    background: #DCE1F6;
+    background: #dce1f6;
     -ms-grid-rows: 20% auto;
         grid-template-rows: 20% auto;
     -ms-grid-columns: auto;

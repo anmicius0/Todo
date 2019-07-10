@@ -1,232 +1,242 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
 
-body, html {
-    height: calc(100% - 2em);
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
+body,
+html {
+  height: calc(100% - 2em);
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
 }
 
 body {
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#84fab0+0,8fd3f4+100 */
-    background: #84fab0; /* Old browsers */
-    background: -moz-linear-gradient(-45deg,  #84fab0 0%, #8fd3f4 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(-45deg,  #84fab0 0%,#8fd3f4 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(135deg,  #84fab0 0%,#8fd3f4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#84fab0', endColorstr='#8fd3f4',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#84fab0+0,8fd3f4+100 */
+  background: #84fab0; /* Old browsers */
+  background: -moz-linear-gradient(
+    -45deg,
+    #84fab0 0%,
+    #8fd3f4 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    -45deg,
+    #84fab0 0%,
+    #8fd3f4 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    135deg,
+    #84fab0 0%,
+    #8fd3f4 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#84fab0', endColorstr='#8fd3f4',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 aside {
-    color: #fff;
-    display: grid;
-    grid-template-columns: auto 40px;
-    padding: 2em;
+  color: #fff;
+  display: grid;
+  grid-template-columns: auto 40px;
+  padding: 2em;
 }
 
 img {
-    width: 40px;
-    cursor: pointer;
+  width: 40px;
+  cursor: pointer;
 }
 
 figure {
-    margin: 0%;
+  margin: 0%;
 }
 
 figcaption {
-    font-size: 1.3em;
-    font-weight: 700;
+  font-size: 1.3em;
+  font-weight: 700;
 }
 
 nav {
-    background: #fff;
+  background: #fff;
 }
 
 .active {
-    position: absolute;
-    display: block;
-    background: #fff;
-    height: 100%;
-    width:50%;
-    left: 0;
-    top: 0;
+  position: absolute;
+  display: block;
+  background: #fff;
+  height: 100%;
+  width: 50%;
+  left: 0;
+  top: 0;
 }
 
-ul{
-    display: none;
-    list-style-type: none;
-    padding: 0%;
-    margin: 0%;
+ul {
+  display: none;
+  list-style-type: none;
+  padding: 0%;
+  margin: 0%;
 
-    li a {
-        text-decoration: none;
-        text-transform: uppercase;
-        font-size: 0.9em;
-        display: block;
-        padding: 1.5em 3em;
-        background-color: rgba(255, 255, 255, .35);
-        color: #000;
-    }
+  li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    display: block;
+    padding: 1.5em 3em;
+    background-color: rgba(255, 255, 255, 0.35);
+    color: #000;
+  }
 }
 
 main {
-    background: #fff;
-    padding: 1em 1.4em;
+  background: #fff;
+  padding: 1em 1.4em;
 }
 
 #title-bar {
-    margin: 0%;
-    display: grid;
-    grid-template-columns: auto;
-    text-align: center;
+  margin: 0%;
+  display: grid;
+  grid-template-columns: auto;
+  text-align: center;
 
-    h1 {
-        padding: 0%;
-        font-size: 3em;
-    }
-    
-    #counter {
-        font-size: 1.5em;
-    }
-} 
+  h1 {
+    padding: 0%;
+    font-size: 3em;
+  }
 
-.todo-item {
-    display: grid;
-    grid-template-columns: 80% auto;
+  #counter {
+    font-size: 1.5em;
+  }
 }
 
+.todo-item {
+  display: grid;
+  grid-template-columns: 80% auto;
+}
 
 // test
 .icon-btn {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #cdcdcd;
+  background: white;
+  border-radius: 25px;
+  overflow: hidden;
+  position: relative;
+  transition: width 0.2s ease-in-out;
+}
+.add-btn:hover {
+  width: 8em;
+}
+.add-btn::before,
+.add-btn::after {
+  transition: width 0.2s ease-in-out, border-radius 0.2s ease-in-out;
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 10px;
+  top: calc(50% - 2px);
+  background: red;
+}
+.add-btn::after {
+  right: 14px;
+  overflow: hidden;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+.add-btn::before {
+  left: 14px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+.icon-btn:focus {
+  outline: none;
+}
+.btn-txt {
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.add-btn:hover::before,
+.add-btn:hover::after {
+  width: 4px;
+  border-radius: 2px;
+}
+.add-btn:hover .btn-txt {
+  opacity: 1;
+}
+.add-icon::after,
+.add-icon::before {
+  transition: all 0.2s ease-in-out;
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 2px;
+  top: calc(50% - 10px);
+  background: red;
+  overflow: hidden;
+}
+.add-icon::before {
+  left: 22px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+.add-icon::after {
+  right: 22px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+.add-btn:hover .add-icon::before {
+  left: 15px;
+  height: 4px;
+  top: calc(50% - 2px);
+}
+.add-btn:hover .add-icon::after {
+  right: 15px;
+  height: 4px;
+  top: calc(50% - 2px);
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    display: grid;
+    grid-template-columns: 20% auto;
+    padding: 2em;
+  }
+
+  img {
+    display: none;
+  }
+
+  aside {
+    background: #dce1f6;
+    grid-template-rows: 20% auto;
+    grid-template-columns: auto;
+    padding: 0%;
+  }
+
+  main {
+    padding-top: 4em;
+    background: #fff;
+  }
+
+  #avatar {
+    border-radius: 50%;
+    background: #fff;
     width: 50px;
     height: 50px;
-    border: 1px solid #cdcdcd;
-    background: white;
-    border-radius: 25px;
-    overflow: hidden;
+    margin: 2em auto 1em auto;
+  }
+
+  figcaption {
+    text-align: center;
+    color: #000;
+  }
+
+  ul {
+    display: block;
+    margin-top: 2em;
     position: relative;
-    transition: width 0.2s ease-in-out;
-  }
-  .add-btn:hover {
-    width: 8em;
-  }
-  .add-btn::before,
-  .add-btn::after {
-    transition: width 0.2s ease-in-out, border-radius 0.2s ease-in-out;
-    content: "";
-    position: absolute;
-    height: 4px;
-    width: 10px;
-    top: calc(50% - 2px);
-    background: red;
-  }
-  .add-btn::after {
-    right: 14px;
-    overflow: hidden;
-    border-top-right-radius: 2px;
-    border-bottom-right-radius: 2px;
-  }
-  .add-btn::before {
-    left: 14px;
-    border-top-left-radius: 2px;
-    border-bottom-left-radius: 2px;
-  }
-  .icon-btn:focus {
-    outline: none;
-  }
-  .btn-txt {
-    opacity: 0;
-    transition: opacity 0.2s;
-  }
-  .add-btn:hover::before,
-  .add-btn:hover::after {
-    width: 4px;
-    border-radius: 2px;
-  }
-  .add-btn:hover .btn-txt {
-    opacity: 1;
-  }
-  .add-icon::after,
-  .add-icon::before {
-    transition: all 0.2s ease-in-out;
-    content: "";
-    position: absolute;
-    height: 20px;
-    width: 2px;
-    top: calc(50% - 10px);
-    background: red;
-    overflow: hidden;
-  }
-  .add-icon::before {
-    left: 22px;
-    border-top-left-radius: 2px;
-    border-bottom-left-radius: 2px;
-  }
-  .add-icon::after {
-    right: 22px;
-    border-top-right-radius: 2px;
-    border-bottom-right-radius: 2px;
-  }
-  .add-btn:hover .add-icon::before {
-    left: 15px;
-    height: 4px;
-    top: calc(50% - 2px);
-  }
-  .add-btn:hover .add-icon::after {
-    right: 15px;
-    height: 4px;
-    top: calc(50% - 2px);
-  }
-  
-  
+    background: none;
+    width: 100%;
 
-@media only screen and (min-width:768px) {
-    body {
-        display:grid;
-        grid-template-columns: 20% auto;
-        padding: 2em;
+    li a:hover {
+      background: #fff;
     }
+  }
 
-    img {
-        display: none;
-    }
-
-    aside {
-        background: #DCE1F6;
-        grid-template-rows: 20% auto;
-        grid-template-columns: auto;
-        padding: 0%;
-    }
-
-    main {
-        padding-top: 4em;
-        background: #fff;
-    }
-
-    #avatar {
-        border-radius: 50%;
-        background: #fff;
-        width: 50px;
-        height: 50px;
-        margin: 2em auto 1em auto;
-    }
-
-    figcaption {
-        text-align: center;
-        color: #000;
-    }
-
-    ul {
-        display: block;
-        margin-top: 2em;
-        position: relative;
-        background: none;
-        width: 100%;
-
-        li a:hover {
-            background: #fff;
-        }
-    }
-
-    nav {
-        background: none;   
-    }
+  nav {
+    background: none;
+  }
 }
